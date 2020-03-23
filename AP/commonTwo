@@ -1,0 +1,32 @@
+/*
+
+Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Return the count of the number of strings which appear in both arrays. The best "linear" solution makes a single pass over both arrays, taking advantage of the fact that they are in alphabetical order.
+
+
+commonTwo(["a", "c", "x"], ["b", "c", "d", "x"]) → 2
+commonTwo(["a", "c", "x"], ["a", "b", "c", "x", "z"]) → 3
+commonTwo(["a", "b", "c"], ["a", "b", "c"]) → 3
+*/
+public int commonTwo(String[] a, String[] b) {
+  char prev = '3' ;
+  int i = 0 , j = 0 , count = 0 ;
+  while( true ) {
+    if( i >= a.length || j >= b.length )
+      return count ; 
+    if( a[i].charAt(0) == prev ) 
+      i++ ;
+    else if( b[j].charAt(0) == prev ) 
+      j++ ;
+    else if( a[i].charAt(0) == b[j].charAt(0) ) {
+      prev = a[i].charAt(0) ;
+      count++ ;
+      i++ ;
+      j++ ;
+    }  
+    else if( a[i].charAt(0) > b[j].charAt(0) )
+      j++ ;
+    else if( a[i].charAt(0) < b[j].charAt(0) )
+      i++ ;
+  
+  }
+}
