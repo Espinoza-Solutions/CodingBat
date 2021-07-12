@@ -1,0 +1,16 @@
+public int matchUp(int[] nums1, int[] nums2) {
+  int greater = 0;
+  int less = 0;
+  int count = 0;
+  for(int i = 0; i < nums1.length ; i++){
+    greater = nums1[i]; //1
+    less = nums2[i]; //2
+    if(nums2[i] > nums1[i]){
+      greater = nums2[i];//2
+      less = nums1[i];//1
+    }
+    if(greater - less <=2 && nums1[i] != nums2[i])
+      count++;
+  }
+  return count;
+}
