@@ -16,3 +16,4 @@ public boolean modThree(int[] nums) {
   }
   return false;
 }
+//https://youtu.be/R5xdAgkLqoU
